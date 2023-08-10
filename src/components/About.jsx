@@ -1,11 +1,17 @@
+import  Navbar  from "../components/menu/Navbar";
+import HeaderAb from "./aboutPage/HeaderAb";
+import MapAb from "./aboutPage/MapAb";
+import TopHeaderAb from "./aboutPage/TopHeaderAb";
 
 
 
 function About(){
     return (
         <div>
-            Welcome To About Page 
-            <h1>Start About Page </h1>
+           <Navbar/>
+           <TopHeaderAb/>
+            <HeaderAb />
+            <MapAb/>
         </div>
     )
 }
