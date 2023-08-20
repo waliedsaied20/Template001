@@ -1,17 +1,14 @@
-import  Navbar  from "../components/menu/Navbar";
-import HeaderAb from "./aboutPage/HeaderAb";
-import MapAb from "./aboutPage/MapAb";
-import TopHeaderAb from "./aboutPage/TopHeaderAb";
+import HeadComp from "./aboutPage0/HeadComp";
+import MapAb from "./contactPage/MapAb";
+import FooterLocation from './menu/FotterLocation' 
 
-
-
+ 
 function About(){
     return (
-        <div>
-           <Navbar/>
-           <TopHeaderAb/>
-            <HeaderAb />
-            <MapAb/>
+        <div className="">
+      
+        <HeadComp />
+        
         </div>
     )
 }

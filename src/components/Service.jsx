@@ -1,13 +1,12 @@
-
-
+import MainProducts from "./products/TotalProducts";
+import { HeadProduct } from "./products/TotalProducts";
 function Service() {
-    return (
-        <div>
-            Welcome To Page Service
-        </div>
-    )
-
-    
+  return (
+    <div>
+      <HeadProduct  title={"Home"} child={'Products'}/>
+      <MainProducts />
+    </div>
+  );
 }
 
 export default Service;

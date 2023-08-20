@@ -13,6 +13,8 @@ module.exports = {
     },
     fontFamily: {
       'slab': ['Roboto Slab', 'serif'],
+      'Montserrat': ['Montserrat', 'sans-serif'],
+       'Frank' : ['Frank Ruhl Libre', 'serif'],
     },
   },
   variants: {

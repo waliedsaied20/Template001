@@ -26,7 +26,7 @@ function FooterLocation() {
     })
   return (
     <>
-      <section className="footerLocation overflow-hidden" ref={refLocation} style={styleBg}>
+      <section className={`footerLocation overflow-hidden max-sm:!bg-bottom`} ref={refLocation} style={styleBg}>
         <div className="container mx-auto px-6">
           <div className="flex max-md:flex-wrap max-sm:block">
             <div className={`div1 py-3 ${inView ? `animate__animated animate__fadeInTopLeft animate__slow`: ''}`}>
@@ -58,7 +58,7 @@ function FooterLocation() {
                   walied.saied12@yahoo.com
                 </button>
               </div>
-              <div className="">
+              <div >
                 <Link
                   to="https://www.google.com"
                   target="_blank"
@@ -81,7 +81,7 @@ function FooterLocation() {
               </p>
             </div>
             <div className={`div3 ${inView ? `animate__animated animate__fadeInUpBig animate__slow`: ''}`}>
-              <div className=" ">
+              <div >
                 <p className="my-3">
                   <LuMapPin className="text-blue-500 text-2xl inline-block" />{" "}
                   London: <a href="tel:0201124976668"> 0201124976668</a>

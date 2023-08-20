@@ -6,12 +6,14 @@ import Contactus from "./components/Contactus";
 
 // import Navbar from './components/menu/Navbar';
 import "./styling.css";
+import  Navbar  from "./components/menu/Navbar";
 
 function App() {
   return (
     <div>
       {/* <h2>Welcome to Home page</h2> */}
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route index element={<HomePage2 />} />
           <Route path="/about" element={<About />} />

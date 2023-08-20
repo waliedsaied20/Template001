@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+font-family: 'Frank Ruhl Libre', serif
+}
 
 .clip-circle {
   clip-path: circle(50% at 50% 50%);
@@ -23,3 +25,7 @@ align-items: center;
 .react-horizontal-scrolling-menu--scroll-container {
   overflow-x:hidden;
   }  
+
+  h1 , h2 , h3 , h4 {
+  font-family: 'Montserrat', 'sans-serif'
+  }

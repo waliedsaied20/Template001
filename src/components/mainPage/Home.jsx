@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import Navbar from "../menu/Navbar";
+// import Navbar from "../menu/Navbar"; // import as a default from App.jsx
 import Headers from "../menu/Header_1";
 import SectionTwo from "../menu/SectionTwo";
 import SectionThree from "../menu/SectionThree";
@@ -22,7 +22,7 @@ function HomePage2() {
   const mainTextColor = "#FF5C98";
   return (
     <div className="selection:bg-mainText1 selection:text-white">
-      <Navbar textColor={mainTextColor} />
+      {/* <Navbar textColor={mainTextColor} /> */}
       <Headers textColor={mainTextColor} />
       <SectionTwo textColor={mainTextColor} />
       <SectionThree textColor={mainTextColor} />

@@ -22,7 +22,7 @@ function ContactUs() {
             <h2 className="inline-block font-bold font-slab text-mainText1 text-6xl">
               Financial Advices
             </h2>
-            <h3 className="font-bold font-slab text-blue-500 text-4xl">
+            <h3 className="font-bold  text-blue-500 text-4xl">
               On Your Phone
             </h3>
             <p className="w-2/3 leading-8 my-5 max-sm:w-full">
@@ -30,7 +30,7 @@ function ContactUs() {
               discounts for any financial project you might have. Simply type in
               your email address and we’ll include you in our next update.
             </p>
-            <div className="">
+            <div >
               <form action="" className="flex justify-around " onSubmit={handleSubmit}>
                 <input
                   className="p-5 border w-2/3 rounded-full  max-sm:w-auto max-sm:p-2 "

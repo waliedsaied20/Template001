@@ -31,28 +31,30 @@ const Navbar = () => {
             </li>
             {/* Add dropdown for Services */}
             <li className="relative text-black animate__animated  animate__slideInRight">
-              <button
-                onClick={toggleDropdown}
-                className="w-full text-left flex items-center justify-between"
-              >
-                Services
-                <FaCaretDown
-                  className={`ml-2 transform ${
-                    isDropdownOpen ? "rotate-180" : "rotate-0"
-                  } transition-transform`}
-                />
-              </button>
+              <Link to="/service">
+                <button
+                  onClick={toggleDropdown}
+                  className="w-full text-left flex items-center justify-between"
+                >
+                  Products
+                  <FaCaretDown
+                    className={`ml-2 transform ${
+                      isDropdownOpen ? "rotate-180" : "rotate-0"
+                    } transition-transform`}
+                  />
+                </button>
+              </Link>
               {/* Dropdown */}
               {isDropdownOpen && (
-                <ul className=" z-100 absolute top-0 z-100 right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
+                <ul className=" z-50 absolute top-0  right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
                   <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
-                  <Link to="/1">Service_1</Link>
+                    <Link to="/1">Product_1</Link>
                   </li>
                   <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
-                  <Link to="/2">Service_2</Link>
+                    <Link to="/2">Product_2</Link>
                   </li>
                   <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
-                  <Link to="/3">Service_3</Link>
+                    <Link to="/3">Product_3</Link>
                   </li>
                 </ul>
               )}
@@ -89,25 +91,27 @@ const Navbar = () => {
             onMouseEnter={toggleDropdown}
             onMouseLeave={toggleDropdown}
           >
-            <button className="w-full text-left flex items-center justify-between">
-              Services
-              <FaCaretDown
-                className={`ml-2 transform ${
-                  isDropdownOpen ? "rotate-180" : "rotate-0"
-                } transition-transform`}
-              />
-            </button>
+            <Link to="/service">
+              <button className="w-full text-left flex items-center justify-between">
+                Products
+                <FaCaretDown
+                  className={`ml-2 transform ${
+                    isDropdownOpen ? "rotate-180" : "rotate-0"
+                  } transition-transform`}
+                />
+              </button>
+            </Link>
             {/* Dropdown */}
             {isDropdownOpen && (
               <ul className="z-100 absolute top-full h-fit py-5 z-100 left-0 w-fit bg-blue-300 rounded px-3 animate__animated animate__bounceIn animate__slow">
                 <li className="text-black cursor-pointer  border p-2 my-2 hover:bg-yellow-300 rounded">
-                  <Link to="/1">Service_1</Link>
+                  <Link to="/1">Product_1</Link>
                 </li>
                 <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
-                  <Link to="/2">Service_2</Link>
+                  <Link to="/2">Product_2</Link>
                 </li>
                 <li className="text-black cursor-pointer border p-2 mt-2 hover:bg-yellow-300 rounded">
-                  <Link to="/3">Service_3</Link>
+                  <Link to="/3">Product_3</Link>
                 </li>
               </ul>
             )}

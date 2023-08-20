@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import bgGround from "../../images/bgn-services-curve.png";
 import { useInView } from "react-intersection-observer";
-// import 'https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap';
+// import 'https://fonts.googleapis.com/css2?=Roboto+Slab&display=swap';
 
 function SectionFour({ textColor }) {
   const [ref, inView] = useInView({
@@ -18,7 +18,7 @@ function SectionFour({ textColor }) {
   return (
     <div>
       <section className="px-12 m-auto py-10 " style={handleBg} ref={ref}>
-        <div className="">
+        <div >
           <div className="flex justify-between items-center p-3 max-sm:block">
             <div
               className={`w-1/2 max-sm:w-full ${
@@ -91,7 +91,7 @@ function SectionFour({ textColor }) {
                   </text>
                 </svg>
               </blockquote>
-              <h2 className="font-slab w-2/3 mt-10 font-bold  text-2xl leading-relaxed">
+              <h2 className=" w-2/3 mt-10 font-bold font-slab  text-2xl leading-relaxed">
                 The better we know you, the more we can do. Aligning your
                 financial strategy matters to both of us.
               </h2>

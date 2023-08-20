@@ -28,7 +28,7 @@ function SectionSix({textColor}) {
  const renderCustomer = MainCustomer.map((customer) => {
     return (
         <div ref={refLocation} key={customer.id} className={`w-1/4 max-md:w-1/2 max-sm:w-full ${inView ? `animate__animated animate__slower ${customer.animate}`  : ''} `}>
-               <div className='' id={customer.id}>
+               <div  id={customer.id}>
 
                 <img src={customer.image} alt={customer.title} title={customer.title}/>
                </div>

@@ -73,7 +73,7 @@ function SectionFive({ textColor }) {
         <div>
           <img src={item.image} alt={item.title} />
         </div>
-        <div className={` `}>
+        <div >
           <h3 className={`${item.titleStyle} font-bold text-4xl text-center`}>
             {item.title}
           </h3>
