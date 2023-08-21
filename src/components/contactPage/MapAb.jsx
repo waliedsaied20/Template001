@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import emailjs from 'emailjs-com'
-import { useRef , useState } from "react";
+import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function MapAb() {
@@ -8,7 +8,7 @@ function MapAb() {
     triggerOnce: false,
     threshold: 0.4,
   });
-  const [name , setName ] = useState('')
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
@@ -16,28 +16,45 @@ function MapAb() {
   const [errorMessage, setErrorMessage] = useState('')
 
   const [captchaToken, setCaptchaToken] = useState('')
-  const form = useRef()
+  const captchaRef = useRef(null);
 
-  // if(!captchaToken) {
-  //   alert('Please Complate the recaptcha');
-  //   return ;
+  // if (captchaRef.current || !captchaRef.current.getValue()) {
+  //   alert('Please complete the reCAPTCHA.');
+  //   return;
   // }
-const handleSubmitForm = (ee) => {
-  ee.preventDefault();
-  try{
-    emailjs.send('service_4dfbwp8', 'template_32zrjxr', form.current , "XgQ8PPANQGVvx81L-")
-    setName('')
-    setEmail('')
-    setSubject('')
-    setMessage('')
-    setCaptchaToken('')
+  const handleSubmitForm = async (ee) => {
+    ee.preventDefault();
+    const templateParams = {
+      'g-recaptcha-response': captchaToken,
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
 
-  }catch (error){
-      console.log(error , "Error Sending Email")
+    try {
+      await emailjs.send('service_4dfbwp8', 'template_32zrjxr', templateParams, "XgQ8PPANQGVvx81L-")
+      setName('')
+      setEmail('')
+      setSubject('')
+      setMessage('')
+      setCaptchaToken('')
+      setSuccessMessage('Message sent successfully ')
+      alert("Message sent successfully")
+      captchaRef.current.reset();
+
+    } catch (error) {
+      setErrorMessage('Message has failed')
+      setSuccessMessage('')
+      console.log(error, "Error Sending Email")
+    }
+
   }
-
-}
-
+  // const templateParams = {
+  //   to_name: 'Recipient Name',
+  //   // ...other parameters
+  //   'g-recaptcha-response': captchaRef.current, // Get reCAPTCHA token
+  // };
   return (
     <>
       <section ref={refLocation} className="bg-mainBgBlue max-sm:py-8">
@@ -46,17 +63,16 @@ const handleSubmitForm = (ee) => {
             <iframe
               title="Map Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.276459874479!2d31.283082399999998!3d29.9714839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458387ab412fc13%3A0xd41ca8b84d97b6a1!2sSalec%20Egypt%2C%20S.A.E.!5e0!3m2!1sar!2seg!4v1692547424769!5m2!1sar!2seg"
-              className={`w-[500px] h-[500px] max-sm:w-[300px] max-sm:h-[300px] max-sm:mx-auto  overflow-hidden rounded-full ${
-                inView
+              className={`w-[500px] h-[500px] max-sm:w-[300px] max-sm:h-[300px] max-sm:mx-auto  overflow-hidden rounded-full ${inView
                   ? `animate__animated animate__rotateIn  animate__slower `
                   : ""
-              }`}
+                }`}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <div className={`w-1/2 max-sm:w-full max-md:w-full max-md:mx-auto p-4  ${inView ? 'animate__animated animate__rotateInUpRight animate__slow' :''}`}>
+          <div className={`w-1/2 max-sm:w-full max-md:w-full max-md:mx-auto p-4  ${inView ? 'animate__animated animate__rotateInUpRight animate__slow' : ''}`}>
             <div>
               <h1 className="text-mainText1 font-bold text-5xl max-sm:text-center">
                 Get in <span className="text-mainTextBlue"> touch </span>
@@ -71,16 +87,17 @@ const handleSubmitForm = (ee) => {
                 <li className="my-3 w-3/4  max-sm:mx-auto">
                   <input
                     className="p-4 rounded-xl w-full"
-                    type="text" name="from_name" value={name} onChange={(e) => setName(e.target.value)}
+                    type="text" name="customer_name" value={name} onChange={(e) => setName(e.target.value)}
                     placeholder="Enter Your Name*"
+                    required
                   />
                 </li>
                 <li className="my-3 w-3/4 max-sm:mx-auto">
                   <input
                     className="p-4 rounded-xl w-full"
-                    type="email"
+                    type="email" required
                     placeholder="Enter Your Email Address*"
-                    name="from_email"
+                    name="customer_email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -92,8 +109,9 @@ const handleSubmitForm = (ee) => {
                     placeholder="Enter Your Subject*"
                     name="subject"
                     value={subject}
+                    required
                     onChange={(w) => setSubject(w.target.value)}
-/>
+                  />
                 </li>
                 <li className="my-3 w-3/4 max-sm:mx-auto">
                   <textarea
@@ -107,8 +125,20 @@ const handleSubmitForm = (ee) => {
                   />
                 </li>
                 <li>
-                  <ReCAPTCHA sitekey="6LcXyb8nAAAAAKL6IBzXeXqrWX6R0o2DUirJH0dA" onChange={(token) => setCaptchaToken(token)} />
+
+                  <div className="max-sm:w-3/4 my-4  max-sm:mx-auto">
+                    <ReCAPTCHA sitekey="6Ld07cEnAAAAAItUt79ih31HK5c9TOZZ2OV3ABlq" required ref={captchaRef} onChange={(token) => setCaptchaToken(token)} />
+                  </div>
                   <button className="max-sm:w-3/4 px-8 py-2 max-sm:mx-auto block text-2xl bg-mainTextBlue max-sm:p-2 rounded-xl text-white hover:bg-green-500 ">Submit </button>
+                  {successMessage && <p>{successMessage}</p>}
+                  {errorMessage && <p>{errorMessage}</p>}
+
+
+
+
+
+
+
                 </li>
               </ul>
             </form>
