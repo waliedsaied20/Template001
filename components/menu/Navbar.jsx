@@ -127,7 +127,7 @@ const Navbar = () => {
               <Link to='https://wa.link/y56ed9' target="_blank">
         <button className="flex items-center max-sm:hidden max-md:hidden cursor-pointer py-2 px-4 border bg-green-400 rounded-xl">
         <MdWhatsapp className="text-3xl"/>
-        WhatsApp 
+        WhatsApp +
         </button>
               </Link>
       </div>
