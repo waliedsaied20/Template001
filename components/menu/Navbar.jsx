@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-transparent  text-black p-4 animate__animated animate__zoomIn animate__slower "
+      className="bg-transparent z-40  text-black p-4 animate__animated animate__zoomIn animate__slower "
       style={{ animationIterationCount: 1 }}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -47,7 +47,7 @@ const Navbar = () => {
               </Link>
               {/* Dropdown */}
               {isDropdownOpen && (
-                <ul className=" z-50 absolute top-0  right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
+                <ul className=" z-40 absolute top-0  right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
                   <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
                     <Link to="/1">Product_1</Link>
                   </li>
@@ -65,7 +65,7 @@ const Navbar = () => {
               <Link to="contactus"> Contact</Link>
             </li>
 
-            <button className="flex items-center max-sm:block max-md:block cursor-pointer py-2 px-4 border bg-green-600 rounded-xl">
+            <button className="flex items-center max-sm:block max-md:block cursor-pointer py-2 px-4 border bg-green-400 rounded-xl">
               <MdWhatsapp className="text-3xl" />
               WhatsApp 
             </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
             </Link>
             {/* Dropdown */}
             {isDropdownOpen && (
-              <ul className="z-100 absolute top-full h-fit py-5 z-100 left-0 w-fit bg-blue-300 rounded px-3 animate__animated animate__bounceIn animate__slow">
+              <ul className="z-40 absolute top-full h-fit py-5  left-0 w-fit bg-blue-300 rounded px-3 animate__animated animate__bounceIn animate__slow">
                 <li className="text-black cursor-pointer  border p-2 my-2 hover:bg-yellow-300 rounded">
                   <Link to="/1">Product_1</Link>
                 </li>
@@ -125,7 +125,7 @@ const Navbar = () => {
           </li>
         </ul>
               <Link to='https://wa.link/y56ed9' target="_blank">
-        <button className="flex items-center max-sm:hidden max-md:hidden cursor-pointer py-2 px-4 border bg-green-600 rounded-xl">
+        <button className="flex items-center max-sm:hidden max-md:hidden cursor-pointer py-2 px-4 border bg-green-400 rounded-xl">
         <MdWhatsapp className="text-3xl"/>
         WhatsApp 
         </button>

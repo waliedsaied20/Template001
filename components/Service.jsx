@@ -2,7 +2,7 @@ import MainProducts from "./products/TotalProducts";
 import { HeadProduct } from "./products/TotalProducts";
 function Service() {
   return (
-    <div>
+    <div >
       <HeadProduct  title={"Home"} child={'Products'}/>
       <MainProducts />
     </div>
