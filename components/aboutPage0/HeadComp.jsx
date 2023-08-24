@@ -1,6 +1,6 @@
 import { HeadProduct } from "../products/TotalProducts";
 import bgimage from "../../images/aboutCareve.png";
-import teamAbout from '../../images/aboutPage/team about.png'
+import teamAbout from '../../images/aboutPage/teamwork001-removebg.png'
 import { useInView } from "react-intersection-observer";
 function HeadComp() {
   const changeBg = {
@@ -35,7 +35,7 @@ function HeadComp() {
                 </p>
               </div>
               <div className={`w-1/2 ${inView ? 'animate__animated animate__fadeInTopRight animate__slow' : ""}`}>
-                <img src={teamAbout} className="w-full" alt="Team about" />
+                <img src={teamAbout} className="w-full rounded-xl" alt="Team about" />
               </div>
               </div>
             </div>
