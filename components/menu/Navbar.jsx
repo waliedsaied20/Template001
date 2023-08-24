@@ -20,7 +20,7 @@ const Navbar = () => {
       style={{ animationIterationCount: 1 }}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-black font-bold text-xl">My App</div>
+        <div className="text-black font-bold text-xl">My App 1</div>
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <ul className="md:hidden space-y-4 ">
