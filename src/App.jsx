@@ -7,6 +7,7 @@ import Contactus from "./components/Contactus";
 // import Navbar from './components/menu/Navbar';
 import "./styling.css";
 import  Navbar  from "./components/menu/Navbar";
+import ScrollTop from "./components/menu/ScrollTop";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route path="/contactus" element={<Contactus />} />
         </Routes>
       </BrowserRouter>
+
+    <ScrollTop/> 
+      
     </div>
   );
 }
