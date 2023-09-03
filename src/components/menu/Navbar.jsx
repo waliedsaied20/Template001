@@ -65,7 +65,7 @@ const Navbar = () => {
             </li>
 
             <button className="max-sm:block max-md:block cursor-all-scroll py-2 px-4 border bg-green-600 rounded-xl">
-              Check
+              WhatsApp
             </button>
           </ul>
         )}
