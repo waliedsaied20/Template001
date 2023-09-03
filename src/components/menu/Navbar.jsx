@@ -123,7 +123,7 @@ const Navbar = () => {
           </li>
         </ul>
         <button className="max-sm:hidden max-md:hidden cursor-all-scroll py-2 px-4 border bg-green-600 rounded-xl">
-          Check
+          WhatsApp
         </button>
       </div>
     </nav>
