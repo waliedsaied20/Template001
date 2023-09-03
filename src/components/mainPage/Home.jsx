@@ -12,16 +12,18 @@ import FinancialPlanning from "../menu/Financial_Planning";
 import AvantageNews from "../menu/AvantageNews";
 import Maping from "../menu/Maping";
 import UnderLoca from "../menu/UnderLoca";
-import ContactUs from "../menu/ContactUs";
+import ContactUs from "../menu/SendMail";
 import FooterLocation from "../menu/FotterLocation";
+
 // import SectionOwl from "../menu/SectionOwl";
 // import TextSlider from "../OwlTest";
 // import MakeCusoual from "../Owl_Cusoual";
 
 function HomePage2() {
   const mainTextColor = "#FF5C98";
+
   return (
-    <div className="selection:bg-mainText1 selection:text-white">
+    <div className="selection:bg-mainText1 selection:text-white overflow-hidden">
       {/* <Navbar textColor={mainTextColor} /> */}
       <Headers textColor={mainTextColor} />
       <SectionTwo textColor={mainTextColor} />
@@ -40,6 +42,8 @@ function HomePage2() {
       <UnderLoca />
       <ContactUs />
       <FooterLocation/>
+
+     
     </div>
   );
 }

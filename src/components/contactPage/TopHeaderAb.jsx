@@ -62,6 +62,7 @@ function TopHeaderAb() {
             }`}
           >
             {/* <h2 className="text-6xl font-bold ">About Us </h2> */}
+            <h2 className="p-5 text-5xl font-bold ">About Team </h2>
             <p className="text-2xl font-slab leading-8 p-5 ">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis autem saepe, consequuntur consectetur natus magnam

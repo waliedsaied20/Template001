@@ -2,7 +2,6 @@ import { useInView } from "react-intersection-observer";
 import emailjs from 'emailjs-com'
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-
 function MapAb() {
   const [refLocation, inView] = useInView({
     triggerOnce: false,
@@ -124,14 +123,19 @@ function MapAb() {
                     onChange={(w) => setMessage(w.target.value)}
                   />
                 </li>
-                <li>
+                <li ref={refLocation}>
 
                   <div className="max-sm:w-3/4 my-4  max-sm:mx-auto">
                     <ReCAPTCHA sitekey="6Ld07cEnAAAAAItUt79ih31HK5c9TOZZ2OV3ABlq" required ref={captchaRef} onChange={(token) => setCaptchaToken(token)} />
                   </div>
-                  <button className="max-sm:w-3/4 px-8 py-2 max-sm:mx-auto block text-2xl bg-mainTextBlue max-sm:p-2 rounded-xl text-white hover:bg-green-500 ">Submit </button>
-                  {successMessage && <p>{successMessage}</p>}
-                  {errorMessage && <p>{errorMessage}</p>}
+                  <div className="flex items-center overflow-hidden">
+
+                  <button className=" max-sm:w-3/4 px-8 py-2 max-sm:mx-auto block text-2xl bg-mainTextBlue max-sm:p-2 rounded-xl text-white hover:bg-green-500 ">
+                    Submit 🚀
+                  </button>
+                  {successMessage && <p className={` text-xl text-white bg-green-500 p-2 rounded-xl ml-2 ${inView ? "animate__animated animate__bounceOutRight animate__delay-3s animate__slower " : ""}`}>{successMessage}</p>}
+                  {errorMessage && <p className={` text-xl text-white bg-red-500 p-2 rounded-xl ml-2 ${inView ? "animate__animated animate__bounceOutRight animate__delay-3s animate__slower " : ""}`}>{errorMessage}</p>}
+                  </div>
 
 
 

@@ -6,6 +6,7 @@ import SearchInput from "../store/Search/SearchInput";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../store";
 import ListProduct from "../cardSide/ListProduct";
+import FotterLocation from "../menu/FotterLocation";
 
 export function HeadProduct({title , child}) {
 
@@ -188,6 +189,7 @@ function MainProducts() {
               <ListProduct />
             </article>
           </main>
+          <FotterLocation />
         </div>
       </section>
     </>

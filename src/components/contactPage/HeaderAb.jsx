@@ -23,7 +23,7 @@ function HeaderAb() {
   })
   return (
     <>
-      <section className="headerAbout !max-sm:bg-cover" ref={refLocation} style={bgStyle}>
+      <section className="headerAbout !max-sm:bg-cover overflow-hidden" ref={refLocation} style={bgStyle}>
         <div >
           <div >
             <div className="container mx-auto px-12 py-4">
