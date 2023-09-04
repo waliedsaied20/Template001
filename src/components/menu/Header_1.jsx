@@ -37,8 +37,10 @@ function HeaderPage() {
     const timer = setInterval(() => {
       setCurrentSlide((check) => (check + 1) % slidesData.length);
     }, 7000);
+    
     return () => clearInterval(timer);
-  }, [currentSlide, slidesData.length]);
+  }, [currentSlide, slidesData.length]
+  );
   // const customeHight = "calc(100vh - 74px)";
 
   const goToSlide = (index) => {
@@ -53,8 +55,8 @@ function HeaderPage() {
   };
   const timerRef = useRef(null);
   return (  // change screen to h-fit
-    <section className="w-full h-screen relative -z-20 max-sm:h-screen overflow-hidden" >
-      <div className="slideshow-container w-full  max-sm:h-s">
+    <section className="w-full next-section relative z-0 overflow-hidden" >
+      <div className="slideshow-container w-full relative ">
         {slidesData.map((slide, index) => (
           <div
             key={index}

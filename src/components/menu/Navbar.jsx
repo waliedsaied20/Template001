@@ -16,14 +16,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-transparent z-40  text-black p-4 animate__animated animate__zoomIn animate__slower "
+      className="bg-transparent  text-black z-0  p-4 animate__animated animate__zoomIn animate__slower "
       style={{ animationIterationCount: 1 }}
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-black font-bold text-xl">My App 1</div>
         {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <ul className="md:hidden space-y-4 ">
+          <ul className="md:hidden space-y-4  ">
             <li className="text-black animate__animated  animate__slideInRight">
               <Link to="/"> Home </Link>
             </li>
@@ -47,7 +47,7 @@ const Navbar = () => {
               </Link>
               {/* Dropdown */}
               {isDropdownOpen && (
-                <ul className=" z-40 absolute top-0  right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
+                <ul className="dropdown-menu z-40  absolute top-0  right-full bg-blue-300 rounded p-2 animate__animated animate__slideInRight">
                   <li className="text-black cursor-pointer border p-2  my-2 hover:bg-yellow-300 rounded">
                     <Link to="/1">Product_1</Link>
                   </li>
@@ -89,7 +89,7 @@ const Navbar = () => {
           </li>
           {/* Add dropdown for Services */}
           <li
-            className="relative text-black"
+            className="relative text-black "
             onMouseEnter={toggleDropdown}
             onMouseLeave={toggleDropdown}
           >
@@ -105,7 +105,7 @@ const Navbar = () => {
             </Link>
             {/* Dropdown */}
             {isDropdownOpen && (
-              <ul className="z-40 absolute top-full h-fit py-5  left-0 w-fit bg-blue-300 rounded px-3 animate__animated animate__bounceIn animate__slow">
+              <ul className="dropdown-menu absolute top-full h-fit py-5 z-40  left-0 w-fit bg-blue-300 rounded px-3 animate__animated animate__bounceIn animate__slow">
                 <li className="text-black cursor-pointer  border p-2 my-2 hover:bg-yellow-300 rounded">
                   <Link to="/1">Product_1</Link>
                 </li>
@@ -121,7 +121,7 @@ const Navbar = () => {
           {/* End dropdown */}
 
           <li className="text-black">
-            <Link to="contactus"> Contact</Link>
+            <Link to="contactus"> Contact us</Link>
           </li>
         </ul>
               <Link to='https://wa.link/y56ed9' target="_blank">

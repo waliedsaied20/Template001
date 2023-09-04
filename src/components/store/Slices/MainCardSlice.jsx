@@ -22,7 +22,7 @@ const MainCardSlice = createSlice({
     },
     // Delete Product
     removeProduct(state, action) {
-      console.log(action.payload)
+      console.log(action.payload) // here to know whats running
       const upDateProduct = state.productList.filter((product) => {
         
         return product.id !== action.payload;
@@ -33,16 +33,6 @@ const MainCardSlice = createSlice({
         ...state, productList: upDateProduct
       } 
     },
-    // removeProduct(state,action) {
-    //   const updateProduct = [...state.productList];
-    //   const indexToRemove = updateProduct.findIndex(product => product.id === action.payload)
-    //   if(indexToRemove !== -1){
-    //     updateProduct.splice(indexToRemove , 1)
-    //   }
-    //   return {
-    //     state, productList: updateProduct
-    //   }
-    // }
   },
 });
 

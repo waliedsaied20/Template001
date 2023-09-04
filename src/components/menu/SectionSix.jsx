@@ -9,7 +9,8 @@ import Customer8 from '../../images/Customer/Customer 08.png'
 import CornarPage from '../../images/Cornar 2.png';
 
 import { useInView } from 'react-intersection-observer'
-
+// Customer Brand
+// This section Best Customer after section owl
 function SectionSix({textColor}) {
  const [refLocation , inView] = useInView({
     triggerOnce: false,
