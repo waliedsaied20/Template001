@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+font-family: 'Frank Ruhl Libre', serif
+}
+
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.scroll-menu-container {
+ /*
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 20px; 
+  */
+  }
+  
+  @media (max-width: 992px) {
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.react-horizontal-scrolling-menu--inner-wrapper{
+align-items: center;
+
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  overflow-x:hidden;
+  }  
+
+  h1 , h2 , h3 , h4 {
+  font-family: 'Montserrat', 'sans-serif'
+  }
+
+@media (max-width: 992px) {
+  .changeBg{
+    height: 200px !important;
+  }
+  }
+
+  .scalem:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+/*
+  .dropdown-menu {
+  transform: translateZ(1px);
+}
+
+.next-section {
+  position: relative;
+  z-index: 0;
+  transform: translateZ(0);
+}
+*/
+
+
+

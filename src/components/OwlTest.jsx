@@ -16,7 +16,7 @@ import "react-horizontal-scrolling-menu/dist/styles.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
 
-
+// This section Slider scroll X
 
 const slideData = [
   {
@@ -62,7 +62,7 @@ const slideData = [
   {
     id: 6,
     image: Client_6,
-    name: "Walied Mohamed",
+    name: "Sara Ail",
     titlePer: "The right investment",
     pargh:
       "Compellingly embrace empowered e-business after user friendly intellectual capital. Interactively actualize front-end processes convergence.",
@@ -91,12 +91,15 @@ const Slide = ({ name, id, image, pargh , titlePer}) => {
     threshold: 0.4,
   })
   return (
-    <div ref={refLocation} className={`slide  bg-[#ADD5F8] flex flex-col  items-center w-[400px] max-sm:w-[250px] p-5 h-fit mr-4 ${inView ? 'animate__animated animate__flipInY animate__slow' : ''} `}>
+    <div ref={refLocation} className={`slide  bg-[#ADD5F8] flex flex-col  items-center w-[350px] max-sm:w-[250px] p-5 h-fit mr-4 ${inView ? 'animate__animated animate__flipInY animate__slow' : ''} `}>
+      <div className="container mx-auto max-md:px-12 max-sm:px-2">
+
       <img src={image} alt={name} className={`w-full h-full rounded-full  my-4 hover:scale-110 duration-300 ${inView ? 'animate__animated animate__rotateIn slower duration-300 delay-[3000]' :""}`} />
       <div className="font-bold text-2xl text-pink-400 my-4 font-slab">{titlePer}</div>
-      <p className="font-slab leading-8  ">{pargh}</p>
+      <p className="font-slab leading-8  w-full">{pargh}</p>
       <span className="w-full block ">⭐⭐⭐⭐⭐</span>
       <div className="font-bold text-xl my-4 py-5 ">{name}</div>
+      </div>
     </div>
   );
 };
@@ -129,7 +132,7 @@ function TextSlider()  {
     ));
 
   return (
-    <div className="scroll-menu-containerd overflow-x-hidden">
+    <div className="scroll-menu-container overflow-x-hidden">
       <ScrollMenu  LeftArrow={LeftArrow} RightArrow={RightArrow}>
         {getItems()}
       </ScrollMenu>
